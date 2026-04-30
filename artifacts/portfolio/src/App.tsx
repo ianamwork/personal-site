@@ -5,42 +5,43 @@ import { Mail, FileText, ArrowUpRight, Github, Linkedin } from "lucide-react";
    EDIT YOUR INFO HERE
    ───────────────────────────────────────────────────────────────────────────── */
 
-const NAME = "Your Name";                           // ← your full name
-const TAGLINE = "UC Berkeley Economics · Finance, Strategy & Technology";  // ← one-line intro
+const NAME = "Ian Martinez Work"; // ← your full name
+const TAGLINE = "Building · Finance, Strategy & Technology"; // ← one-line intro
 
-const GITHUB_URL  = "https://github.com/yourusername";    // ← your GitHub URL
-const LINKEDIN_URL = "https://linkedin.com/in/yourusername"; // ← your LinkedIn URL
-const EMAIL       = "you@example.com";                    // ← your email address
-const RESUME_URL  = "#";                                  // ← link to your resume PDF
+const GITHUB_URL = "https://github.com/ianamwork"; // ← your GitHub URL
+const LINKEDIN_URL = "https://linkedin.com/in//ian-martinez-work/"; // ← your LinkedIn URL
+const EMAIL = "iwork@berkeley.edu"; // ← your email address
+const RESUME_URL = "#"; // ← link to your resume PDF
 
-const ABOUT_TEXT = `I'm a UC Berkeley Economics student passionate about the intersection of
-finance, strategy, and technology. I'm drawn to startups, AI-driven products, and data-informed
-decision-making — I love understanding how markets work and building things that move them.
-When I'm not studying, I'm exploring new ideas at the edge of tech and capital.`;
+const ABOUT_TEXT = `I'm a builder at heart — studying Economics at UC Berkeley and Sciences Po Paris has taught me to think rigorously about systems, but what I really love is making things. Whether it's a payments product, a workforce platform, or a market model, I'm drawn to the moment when an idea becomes something real. I'm currently focused on payments infrastructure in Latin America and building Rostr, a workforce management platform for event security. Always working on something.`;
 // ← edit the paragraph above with your own bio
 
 const PROJECTS = [
   {
-    title: "Project Alpha",                         // ← replace with your project name
-    description: "A short description of what this project does, the problem it solves, and what you built. Keep it 1–2 sentences.",
-    tags: ["Python", "Data", "Finance"],            // ← your tech stack tags
-    link: "#",                                      // ← GitHub or live link
+    title: "Project Alpha", // ← replace with your project name
+    description:
+      "A short description of what this project does, the problem it solves, and what you built. Keep it 1–2 sentences.",
+    tags: ["Python", "Data", "Finance"], // ← your tech stack tags
+    link: "#", // ← GitHub or live link
   },
   {
     title: "Project Beta",
-    description: "A short description of what this project does, the problem it solves, and what you built. Keep it 1–2 sentences.",
+    description:
+      "A short description of what this project does, the problem it solves, and what you built. Keep it 1–2 sentences.",
     tags: ["React", "TypeScript", "API"],
     link: "#",
   },
   {
     title: "Project Gamma",
-    description: "A short description of what this project does, the problem it solves, and what you built. Keep it 1–2 sentences.",
+    description:
+      "A short description of what this project does, the problem it solves, and what you built. Keep it 1–2 sentences.",
     tags: ["Machine Learning", "NLP", "AI"],
     link: "#",
   },
   {
     title: "Project Delta",
-    description: "A short description of what this project does, the problem it solves, and what you built. Keep it 1–2 sentences.",
+    description:
+      "A short description of what this project does, the problem it solves, and what you built. Keep it 1–2 sentences.",
     tags: ["SQL", "Analytics", "Viz"],
     link: "#",
   },
@@ -54,7 +55,9 @@ const PROJECTS = [
 function useMouseGlow() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const mouse = useRef({ x: -999, y: -999 });
-  const glows = useRef<{ x: number; y: number; life: number; maxLife: number; size: number }[]>([]);
+  const glows = useRef<
+    { x: number; y: number; life: number; maxLife: number; size: number }[]
+  >([]);
   const animRef = useRef<number>(0);
 
   useEffect(() => {
@@ -64,7 +67,7 @@ function useMouseGlow() {
     const ctx = canvas.getContext("2d")!;
 
     const resize = () => {
-      canvas.width  = window.innerWidth;
+      canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     };
     resize();
@@ -93,9 +96,9 @@ function useMouseGlow() {
 
       /* static ambient blobs */
       const ambients = [
-        { x: canvas.width * 0.15, y: canvas.height * 0.2,  r: 360, a: 0.045 },
+        { x: canvas.width * 0.15, y: canvas.height * 0.2, r: 360, a: 0.045 },
         { x: canvas.width * 0.82, y: canvas.height * 0.65, r: 280, a: 0.035 },
-        { x: canvas.width * 0.5,  y: canvas.height * 0.85, r: 220, a: 0.028 },
+        { x: canvas.width * 0.5, y: canvas.height * 0.85, r: 220, a: 0.028 },
       ];
       for (const b of ambients) {
         const g = ctx.createRadialGradient(b.x, b.y, 0, b.x, b.y, b.r);
@@ -111,7 +114,14 @@ function useMouseGlow() {
         const t = glow.life / glow.maxLife;
         const ease = t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
         const opacity = Math.sin(Math.PI * t) * 0.22;
-        const gr = ctx.createRadialGradient(glow.x, glow.y, 0, glow.x, glow.y, glow.size * (0.6 + ease * 0.4));
+        const gr = ctx.createRadialGradient(
+          glow.x,
+          glow.y,
+          0,
+          glow.x,
+          glow.y,
+          glow.size * (0.6 + ease * 0.4),
+        );
         gr.addColorStop(0, `rgba(60,200,90,${opacity})`);
         gr.addColorStop(0.45, `rgba(30,130,55,${opacity * 0.38})`);
         gr.addColorStop(1, "rgba(0,0,0,0)");
@@ -120,11 +130,12 @@ function useMouseGlow() {
         ctx.arc(glow.x, glow.y, glow.size * (0.6 + ease * 0.4), 0, Math.PI * 2);
         ctx.fill();
       }
-      glows.current = glows.current.filter(g => g.life < g.maxLife);
+      glows.current = glows.current.filter((g) => g.life < g.maxLife);
 
       /* persistent cursor bloom */
       if (mouse.current.x > 0) {
-        const mx = mouse.current.x, my = mouse.current.y;
+        const mx = mouse.current.x,
+          my = mouse.current.y;
         const cg = ctx.createRadialGradient(mx, my, 0, mx, my, 120);
         cg.addColorStop(0, "rgba(80,220,100,0.11)");
         cg.addColorStop(0.5, "rgba(40,160,70,0.05)");
@@ -153,17 +164,22 @@ function useCursorRing() {
     const ring = document.getElementById("cursor-ring");
     if (!ring) return;
     let raf = 0;
-    let tx = -100, ty = -100;
-    let cx = -100, cy = -100;
+    let tx = -100,
+      ty = -100;
+    let cx = -100,
+      cy = -100;
 
-    const onMove = (e: MouseEvent) => { tx = e.clientX; ty = e.clientY; };
+    const onMove = (e: MouseEvent) => {
+      tx = e.clientX;
+      ty = e.clientY;
+    };
     window.addEventListener("mousemove", onMove);
 
     const animate = () => {
       cx += (tx - cx) * 0.18;
       cy += (ty - cy) * 0.18;
       ring.style.left = cx + "px";
-      ring.style.top  = cy + "px";
+      ring.style.top = cy + "px";
       raf = requestAnimationFrame(animate);
     };
     animate();
@@ -179,20 +195,31 @@ function useCursorRing() {
    ───────────────────────────────────────────────────────────────────────────── */
 function Nav() {
   return (
-    <nav
-      data-testid="nav"
-      className="fixed top-0 left-0 right-0 z-50"
-    >
+    <nav data-testid="nav" className="fixed top-0 left-0 right-0 z-50">
       <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#hero" className="font-serif text-sm font-medium text-moss" data-testid="nav-logo">
+        <a
+          href="#hero"
+          className="font-serif text-sm font-medium text-moss"
+          data-testid="nav-logo"
+        >
           {NAME.split(" ")[0]}
         </a>
         <div className="hidden sm:flex items-center gap-8">
-          <a href="#about"    className="nav-link" data-testid="nav-about">About</a>
-          <a href="#projects" className="nav-link" data-testid="nav-projects">Projects</a>
-          <a href="#contact"  className="nav-link" data-testid="nav-contact">Contact</a>
+          <a href="#about" className="nav-link" data-testid="nav-about">
+            About
+          </a>
+          <a href="#projects" className="nav-link" data-testid="nav-projects">
+            Projects
+          </a>
+          <a href="#contact" className="nav-link" data-testid="nav-contact">
+            Contact
+          </a>
         </div>
-        <a href={RESUME_URL} className="btn-primary py-1.5 px-4 text-xs" data-testid="nav-resume">
+        <a
+          href={RESUME_URL}
+          className="btn-primary py-1.5 px-4 text-xs"
+          data-testid="nav-resume"
+        >
           Resume <FileText size={13} />
         </a>
       </div>
@@ -216,10 +243,22 @@ function Hero() {
         {TAGLINE}
       </p>
       <div className="flex flex-wrap gap-3 fade-up fade-up-4">
-        <a href={GITHUB_URL} className="btn-primary" data-testid="hero-github" target="_blank" rel="noopener noreferrer">
+        <a
+          href={GITHUB_URL}
+          className="btn-primary"
+          data-testid="hero-github"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <Github size={15} /> GitHub
         </a>
-        <a href={LINKEDIN_URL} className="btn-secondary" data-testid="hero-linkedin" target="_blank" rel="noopener noreferrer">
+        <a
+          href={LINKEDIN_URL}
+          className="btn-secondary"
+          data-testid="hero-linkedin"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <Linkedin size={15} /> LinkedIn
         </a>
       </div>
@@ -246,12 +285,29 @@ function About() {
           </h2>
         </div>
         <div className="space-y-4">
-          <p className="text-muted-foreground leading-relaxed text-[0.95rem]" style={{color: "hsl(130, 8%, 62%)"}}>
+          <p
+            className="text-muted-foreground leading-relaxed text-[0.95rem]"
+            style={{ color: "hsl(130, 8%, 62%)" }}
+          >
             {ABOUT_TEXT}
           </p>
           <div className="flex flex-wrap gap-2 pt-2">
-            {["Finance","Strategy","Startups","AI","Data","Technology","Economics"].map(t => (
-              <span key={t} className="tag" data-testid={`tag-${t.toLowerCase()}`}>{t}</span>
+            {[
+              "Finance",
+              "Strategy",
+              "Startups",
+              "AI",
+              "Data",
+              "Technology",
+              "Economics",
+            ].map((t) => (
+              <span
+                key={t}
+                className="tag"
+                data-testid={`tag-${t.toLowerCase()}`}
+              >
+                {t}
+              </span>
             ))}
           </div>
         </div>
@@ -296,12 +352,17 @@ function Projects() {
                 className="text-muted-foreground group-hover:text-moss transition-colors duration-200 mt-0.5 shrink-0"
               />
             </div>
-            <p className="text-sm leading-relaxed mb-5" style={{color: "hsl(130, 8%, 54%)"}}>
+            <p
+              className="text-sm leading-relaxed mb-5"
+              style={{ color: "hsl(130, 8%, 54%)" }}
+            >
               {p.description}
             </p>
             <div className="flex flex-wrap gap-1.5">
-              {p.tags.map(tag => (
-                <span key={tag} className="tag">{tag}</span>
+              {p.tags.map((tag) => (
+                <span key={tag} className="tag">
+                  {tag}
+                </span>
               ))}
             </div>
           </a>
@@ -325,7 +386,9 @@ function Contact() {
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-10">
         <div>
           <p className="section-label mb-3">Contact</p>
-          <h2 className="font-serif text-3xl font-medium text-foreground mb-3">Get In Touch</h2>
+          <h2 className="font-serif text-3xl font-medium text-foreground mb-3">
+            Get In Touch
+          </h2>
           <a
             href={`mailto:${EMAIL}`}
             className="text-sage text-sm hover:text-moss transition-colors duration-200"
@@ -335,22 +398,49 @@ function Contact() {
           </a>
         </div>
         <div className="flex items-center gap-3">
-          <a href={GITHUB_URL} className="social-btn" aria-label="GitHub" data-testid="contact-github" target="_blank" rel="noopener noreferrer">
+          <a
+            href={GITHUB_URL}
+            className="social-btn"
+            aria-label="GitHub"
+            data-testid="contact-github"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Github size={17} />
           </a>
-          <a href={LINKEDIN_URL} className="social-btn" aria-label="LinkedIn" data-testid="contact-linkedin" target="_blank" rel="noopener noreferrer">
+          <a
+            href={LINKEDIN_URL}
+            className="social-btn"
+            aria-label="LinkedIn"
+            data-testid="contact-linkedin"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Linkedin size={17} />
           </a>
-          <a href={`mailto:${EMAIL}`} className="social-btn" aria-label="Email" data-testid="contact-email-btn">
+          <a
+            href={`mailto:${EMAIL}`}
+            className="social-btn"
+            aria-label="Email"
+            data-testid="contact-email-btn"
+          >
             <Mail size={17} />
           </a>
-          <a href={RESUME_URL} className="social-btn" aria-label="Resume" data-testid="contact-resume">
+          <a
+            href={RESUME_URL}
+            className="social-btn"
+            aria-label="Resume"
+            data-testid="contact-resume"
+          >
             <FileText size={17} />
           </a>
         </div>
       </div>
-      <div className="mt-16 pt-6 border-t" style={{borderColor: "rgba(74,140,74,0.09)"}}>
-        <p className="text-xs" style={{color: "hsl(130,8%,35%)"}}>
+      <div
+        className="mt-16 pt-6 border-t"
+        style={{ borderColor: "rgba(74,140,74,0.09)" }}
+      >
+        <p className="text-xs" style={{ color: "hsl(130,8%,35%)" }}>
           © {new Date().getFullYear()} {NAME}
         </p>
       </div>
