@@ -9,7 +9,7 @@ const NAME = "Ian Martinez Work"; // ← your full name
 const TAGLINE = "Building · Finance, Strategy & Technology"; // ← one-line intro
 
 const GITHUB_URL = "https://github.com/ianamwork"; // ← your GitHub URL
-const LINKEDIN_URL = "https://linkedin.com/in//ian-martinez-work/"; // ← your LinkedIn URL
+const LINKEDIN_URL = "https://linkedin.com/in/ian-martinez-work/"; // ← your LinkedIn URL
 const EMAIL = "iwork@berkeley.edu"; // ← your email address
 const RESUME_URL = "#"; // ← link to your resume PDF
 
