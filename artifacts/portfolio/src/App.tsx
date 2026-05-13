@@ -11,39 +11,39 @@ const TAGLINE = "Building · Finance, Strategy & Technology"; // ← one-line in
 const GITHUB_URL = "https://github.com/ianamwork"; // ← your GitHub URL
 const LINKEDIN_URL = "https://linkedin.com/in/ian-martinez-work/"; // ← your LinkedIn URL
 const EMAIL = "iwork@berkeley.edu"; // ← your email address
-const RESUME_URL = "#"; // ← link to your resume PDF
+const RESUME_URL = "https://ian-martinez-work.tiiny.site"; // ← link to your resume PDF
 
 const ABOUT_TEXT = `I'm a builder at heart — studying Economics at UC Berkeley and Sciences Po Paris has taught me to think rigorously about systems, but what I really love is making things. Whether it's a payments product, a workforce platform, or a market model, I'm drawn to the moment when an idea becomes something real. I'm currently focused on payments infrastructure in Latin America and building Rostr, a workforce management platform for event security. Always working on something.`;
 // ← edit the paragraph above with your own bio
 
 const PROJECTS = [
   {
-    title: "Project Alpha", // ← replace with your project name
-    description:
-      "A short description of what this project does, the problem it solves, and what you built. Keep it 1–2 sentences.",
-    tags: ["Python", "Data", "Finance"], // ← your tech stack tags
-    link: "#", // ← GitHub or live link
+    title: "Sovereign Credit Rating Model and Colonial Impact",
+      description:
+        "Project predicts S&P sovereign ratings from macroeconomic fundamentals using ordered logit and XGBoost across 118 countries. Extended the original with colonial history variables and regional deviation analysis.",
+      tags: ["Python", "Econometrics", "Machine Learning"],
+      link: "https://github.com/ianamwork/sovereign-credit-ratings", // ← link to your GitHub repo or the report PDF
   },
   {
-    title: "Project Beta",
+    title: "ROSTR",
     description:
-      "A short description of what this project does, the problem it solves, and what you built. Keep it 1–2 sentences.",
-    tags: ["React", "TypeScript", "API"],
-    link: "#",
+      "Co-founding a SaaS workforce management platform for event security staffing. Automates guard deployment, shift filling, and California labor compliance — replacing the spreadsheets and group chats ops managers rely on today.",
+    tags: ["SaaS", "Operations", "Startup"],
+    link: "https://tryrostr.lovable.app/",
   },
   {
-    title: "Project Gamma",
-    description:
-      "A short description of what this project does, the problem it solves, and what you built. Keep it 1–2 sentences.",
-    tags: ["Machine Learning", "NLP", "AI"],
-    link: "#",
+    title: "Contador",
+      description:
+        "A personal finance tracker that connects to your bank via Plaid, auto-categorizes transactions into spending buckets, and shows a running monthly balance with charts and weekly summaries.",
+      tags: ["React", "Plaid API", "Finance"],
+      link: "https://perfix.replit.app", // ← link to the app or repo
   },
   {
-    title: "Project Delta",
-    description:
-      "A short description of what this project does, the problem it solves, and what you built. Keep it 1–2 sentences.",
-    tags: ["SQL", "Analytics", "Viz"],
-    link: "#",
+    title: "Finance-Lab",
+      description:
+        "FinanceLab is a financial modeling practice tool for college students preparing for data and finance interviews, featuring guided quiz challenges across DCF, comps, and statement analysis using real data from 12 public companies. It also includes a free-form spreadsheet workbench for hands-on modeling practice, with optional sign-in to track scores and progress over time.",
+      tags: ["FPnA", "Data Science", "Economics"],
+      link: "underconstruction", // ← link to a GitHub repo or portfolio page
   },
 ];
 // ← add or remove objects in the array above to add/remove project cards
