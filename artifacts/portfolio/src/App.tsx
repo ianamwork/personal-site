@@ -19,31 +19,41 @@ const ABOUT_TEXT = `I'm a builder at heart — studying Economics at UC Berkeley
 const PROJECTS = [
   {
     title: "Sovereign Credit Rating Model and Colonial Impact",
-      description:
-        "Project predicts S&P sovereign ratings from macroeconomic fundamentals using ordered logit and XGBoost across 118 countries. Extended the original with colonial history variables and regional deviation analysis.",
-      tags: ["Python", "Econometrics", "Machine Learning"],
-      link: "https://github.com/ianamwork/sovereign-credit-ratings", // ← link to your GitHub repo or the report PDF
+    description:
+      "Project predicts S&P sovereign ratings from macroeconomic fundamentals using ordered logit and XGBoost across 118 countries. Extended the original with colonial history variables and regional deviation analysis.",
+    tags: ["Python", "Econometrics", "Machine Learning"],
+    links: [
+      { label: "GitHub", url: "https://github.com/ianamwork/sovereign-credit-ratings" },
+      // { label: "Report", url: "https://your-report-link.com" }, // ← uncomment to add a second link
+    ],
   },
   {
     title: "ROSTR",
     description:
       "Co-founding a SaaS workforce management platform for event security staffing. Automates guard deployment, shift filling, and California labor compliance — replacing the spreadsheets and group chats ops managers rely on today.",
     tags: ["SaaS", "Operations", "Startup"],
-    link: "https://tryrostr.lovable.app/",
+    links: [
+      { label: "App v1", url: "https://tryrostr.lovable.app/" },
+      { label: "App v2", url: "https://rostrapp.lovable.app/" }, // ← second link!
+    ],
   },
   {
     title: "Contador",
-      description:
-        "A personal finance tracker that connects to your bank via Plaid, auto-categorizes transactions into spending buckets, and shows a running monthly balance with charts and weekly summaries.",
-      tags: ["React", "Plaid API", "Finance"],
-      link: "https://perfix.replit.app", // ← link to the app or repo
+    description:
+      "A personal finance tracker that connects to your bank via Plaid, auto-categorizes transactions into spending buckets, and shows a running monthly balance with charts and weekly summaries.",
+    tags: ["React", "Plaid API", "Finance"],
+    links: [
+      { label: "Live", url: "https://perfix.replit.app" },
+    ],
   },
   {
     title: "Finance-Lab",
-      description:
-        "FinanceLab is a financial modeling practice tool for college students preparing for data and finance interviews, featuring guided quiz challenges across DCF, comps, and statement analysis using real data from 12 public companies. It also includes a free-form spreadsheet workbench for hands-on modeling practice, with optional sign-in to track scores and progress over time.",
-      tags: ["FPnA", "Data Science", "Economics"],
-      link: "underconstruction", // ← link to a GitHub repo or portfolio page
+    description:
+      "FinanceLab is a financial modeling practice tool for college students preparing for data and finance interviews, featuring guided quiz challenges across DCF, comps, and statement analysis using real data from 12 public companies.",
+    tags: ["FPnA", "Data Science", "Economics"],
+    links: [
+      // { label: "Live", url: "https://your-link.com" }, // ← uncomment when ready
+    ],
   },
 ];
 // ← add or remove objects in the array above to add/remove project cards
@@ -335,37 +345,57 @@ function Projects() {
       </div>
       <div className="grid sm:grid-cols-2 gap-5">
         {PROJECTS.map((p, i) => (
-          <a
+          <div
             key={i}
-            href={p.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="glass-card rounded-xl p-7 block group"
+            className="glass-card rounded-xl p-7 flex flex-col"
             data-testid={`card-project-${i}`}
           >
-            <div className="flex items-start justify-between mb-4">
-              <h3 className="font-serif text-lg font-medium text-foreground group-hover:text-moss transition-colors duration-200">
-                {p.title}
-              </h3>
-              <ArrowUpRight
-                size={16}
-                className="text-muted-foreground group-hover:text-moss transition-colors duration-200 mt-0.5 shrink-0"
-              />
-            </div>
+            <h3 className="font-serif text-lg font-medium text-foreground mb-3">
+              {p.title}
+            </h3>
             <p
-              className="text-sm leading-relaxed mb-5"
+              className="text-sm leading-relaxed mb-5 flex-1"
               style={{ color: "hsl(130, 8%, 54%)" }}
             >
               {p.description}
             </p>
-            <div className="flex flex-wrap gap-1.5">
+            <div className="flex flex-wrap gap-1.5 mb-4">
               {p.tags.map((tag) => (
                 <span key={tag} className="tag">
                   {tag}
                 </span>
               ))}
             </div>
-          </a>
+            {p.links.length > 0 && (
+              <div className="flex flex-wrap gap-2 pt-3" style={{ borderTop: "1px solid rgba(74,140,74,0.10)" }}>
+                {p.links.map((lnk) => (
+                  <a
+                    key={lnk.label}
+                    href={lnk.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-xs font-medium px-3 py-1.5 rounded-md transition-all duration-200"
+                    style={{
+                      color: "hsl(142, 48%, 52%)",
+                      border: "1px solid rgba(74,140,74,0.20)",
+                      background: "transparent",
+                    }}
+                    onMouseEnter={e => {
+                      (e.currentTarget as HTMLElement).style.background = "rgba(74,160,74,0.10)";
+                      (e.currentTarget as HTMLElement).style.borderColor = "rgba(74,160,74,0.40)";
+                    }}
+                    onMouseLeave={e => {
+                      (e.currentTarget as HTMLElement).style.background = "transparent";
+                      (e.currentTarget as HTMLElement).style.borderColor = "rgba(74,140,74,0.20)";
+                    }}
+                    data-testid={`link-project-${i}-${lnk.label}`}
+                  >
+                    {lnk.label} <ArrowUpRight size={11} />
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
         ))}
       </div>
     </section>
