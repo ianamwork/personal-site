@@ -49,7 +49,7 @@ const PROJECTS = [
   {
     title: "Finance-Lab",
     description:
-      "FinanceLab is a financial modeling practice tool for college students preparing for data and finance interviews, featuring guided quiz challenges across DCF, comps, and statement analysis using real data from 12 public companies.",
+      "**WIP** FinanceLab is a financial modeling practice tool for college students preparing for data and finance interviews, featuring guided quiz challenges across DCF, comps, and statement analysis using real data from 12 public companies.",
     tags: ["FPnA", "Data Science", "Economics"],
     links: [
       // { label: "Live", url: "https://your-link.com" }, // ← uncomment when ready
