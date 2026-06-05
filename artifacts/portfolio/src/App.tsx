@@ -40,7 +40,7 @@ const PROJECTS = [
   {
     title: "Contador",
     description:
-      "A personal finance tracker that connects to your bank via Plaid, auto-categorizes transactions into spending buckets, and shows a running monthly balance with charts and weekly summaries.",
+      "A personal finance tracker that connects to your bank via Plaid, auto-categorizes transactions into spending buckets, and shows a running monthly balance with charts and weekly summaries. (Message me for password)",
     tags: ["React", "Plaid API", "Finance"],
     links: [
       { label: "Live", url: "https://perfix.replit.app" },
