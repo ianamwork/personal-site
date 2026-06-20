@@ -5,7 +5,7 @@ import { Mail, FileText, ArrowUpRight, Github, Linkedin } from "lucide-react";
    EDIT YOUR INFO HERE
    ───────────────────────────────────────────────────────────────────────────── */
 
-//const PROFILE_IMAGE = "https://avatars.githubusercontent.com/u/206695431?s=400&u=ff54f4b78c75ac0d3e48e94911cc1b8cb67d3b19&v=4"; // ← paste a URL or drop a photo into the project (e.g. "/photo.jpg") and put the path here
+const PROFILE_IMAGE = ""; // ← paste a URL or drop a photo into the project (e.g. "/photo.jpg") and put the path here
 
 const NAME = "Ian Martinez Work"; // ← your full name
 const TAGLINE = "Building Across Borders · Strategy, Data & Technology"; // ← one-line intro
@@ -261,7 +261,7 @@ function Hero() {
   return (
     <section
       id="hero"
-      className="relative z-10 min-h-screen flex flex-col justify-center px-6 pt-24 pb-16 max-w-5xl mx-auto"
+      className="relative z-10 min-h-screen flex flex-col justify-center px-6 pt-16 pb-16 max-w-5xl mx-auto"
       data-testid="section-hero"
     >
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-12">
@@ -290,6 +290,15 @@ function Hero() {
               rel="noopener noreferrer"
             >
               <Linkedin size={15} /> LinkedIn
+            </a>
+            <a
+              href={RESUME_URL}
+              className="btn-secondary"
+              data-testid="hero-resume"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FileText size={15} /> Resume
             </a>
           </div>
         </div>
@@ -542,7 +551,6 @@ export default function App() {
       {/* Custom cursor ring */}
       <div id="cursor-ring" aria-hidden="true" />
 
-      <Nav />
       <main>
         <Hero />
         <About />
