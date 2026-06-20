@@ -5,7 +5,7 @@ import { Mail, FileText, ArrowUpRight, Github, Linkedin } from "lucide-react";
    EDIT YOUR INFO HERE
    ───────────────────────────────────────────────────────────────────────────── */
 
-const PROFILE_IMAGE = "https://avatars.githubusercontent.com/u/206695431?s=400&u=ff54f4b78c75ac0d3e48e94911cc1b8cb67d3b19&v=4"; // ← paste a URL or drop a photo into the project (e.g. "/photo.jpg") and put the path here
+//const PROFILE_IMAGE = "https://avatars.githubusercontent.com/u/206695431?s=400&u=ff54f4b78c75ac0d3e48e94911cc1b8cb67d3b19&v=4"; // ← paste a URL or drop a photo into the project (e.g. "/photo.jpg") and put the path here
 
 const NAME = "Ian Martinez Work"; // ← your full name
 const TAGLINE = "Building Across Borders · Strategy, Data & Technology"; // ← one-line intro
