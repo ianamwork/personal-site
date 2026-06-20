@@ -6,14 +6,16 @@ import { Mail, FileText, ArrowUpRight, Github, Linkedin } from "lucide-react";
    ───────────────────────────────────────────────────────────────────────────── */
 
 const NAME = "Ian Martinez Work"; // ← your full name
-const TAGLINE = "Building · Finance, Strategy & Technology"; // ← one-line intro
+const TAGLINE = "Building Across Borders · Strategy, Data & Technology"; // ← one-line intro
 
 const GITHUB_URL = "https://github.com/ianamwork"; // ← your GitHub URL
 const LINKEDIN_URL = "https://linkedin.com/in/ian-martinez-work/"; // ← your LinkedIn URL
 const EMAIL = "iwork@berkeley.edu"; // ← your email address
 const RESUME_URL = "https://ian-martinez-work.tiiny.site"; // ← link to your resume PDF
 
-const ABOUT_TEXT = `I'm a builder at heart — studying Economics at UC Berkeley and Sciences Po Paris has taught me to think rigorously about systems, but what I really love is making things. Whether it's a payments product, a workforce platform, or a market model, I'm drawn to the moment when an idea becomes something real. I'm currently focused on payments infrastructure in Latin America and building Rostr, a workforce management platform for event security. Always working on something.`;
+const ABOUT_TEXT = `I think in systems and operate across borders. Fluent in English, Spanish, and French, I've built my career around connecting people, markets, and technology across Latin America, the U.S., and Europe.
+I'm a UC Berkeley Economics graduate with experience at high-growth startups — FP&A and automation work at Mechanical Orchard, and now payments expansion across Latin America on the Global Payments team at TikTok/ByteDance. I'm AI-native: I use Python, SQL, and Claude Code to build and direct ML workflows, and I'm increasingly focused on orchestrating multiple AI agents toward a single outcome.
+Four years co-captaining Cal Men's Club Soccer taught me what strategy decks miss — execution depends on trust and people who know their roles. I'm looking for work in growth, strategy, data, and strategic finance, where global fluency and technical range actually compound.`;
 // ← edit the paragraph above with your own bio
 
 const PROJECTS = [
@@ -23,7 +25,10 @@ const PROJECTS = [
       "Full prediction pipeline for the 2026 FIFA World Cup — a calibrated XGBoost model trained on 15,507 international matches, layered on a Poisson GLM baseline to simulate the tournament 10,000 times. Includes a separate X-Factor analysis on 3.25M Wyscout match events to identify playing-style features that distinguish winners beyond Elo ratings.",
     tags: ["Python", "XGBoost", "Poisson GLM", "Pandas", "Sports Analytics"],
     links: [
-      { label: "GitHub", url: "https://github.com/ianamwork/wc2026-prediction" },
+      {
+        label: "GitHub",
+        url: "https://wc2026-scanner.vercel.app/",
+      },
     ],
   },
   {
@@ -32,7 +37,10 @@ const PROJECTS = [
       "Project predicts S&P sovereign ratings from macroeconomic fundamentals using ordered logit and XGBoost across 118 countries. Extended the original with colonial history variables and regional deviation analysis.",
     tags: ["Python", "Econometrics", "Machine Learning"],
     links: [
-      { label: "GitHub", url: "https://github.com/ianamwork/sovereign-credit-ratings" },
+      {
+        label: "GitHub",
+        url: "https://github.com/ianamwork/sovereign-credit-ratings",
+      },
       // { label: "Report", url: "https://your-report-link.com" }, // ← uncomment to add a second link
     ],
   },
@@ -51,9 +59,7 @@ const PROJECTS = [
     description:
       "A personal finance tracker that connects to your bank via Plaid, auto-categorizes transactions into spending buckets, and shows a running monthly balance with charts and weekly summaries. (Message me for password)",
     tags: ["React", "Plaid API", "Finance"],
-    links: [
-      { label: "Live", url: "https://perfix.replit.app" },
-    ],
+    links: [{ label: "Live", url: "https://perfix.replit.app" }],
   },
   {
     title: "Finance-Lab",
@@ -376,7 +382,10 @@ function Projects() {
               ))}
             </div>
             {p.links.length > 0 && (
-              <div className="flex flex-wrap gap-2 pt-3" style={{ borderTop: "1px solid rgba(74,140,74,0.10)" }}>
+              <div
+                className="flex flex-wrap gap-2 pt-3"
+                style={{ borderTop: "1px solid rgba(74,140,74,0.10)" }}
+              >
                 {p.links.map((lnk) => (
                   <a
                     key={lnk.label}
@@ -389,13 +398,17 @@ function Projects() {
                       border: "1px solid rgba(74,140,74,0.20)",
                       background: "transparent",
                     }}
-                    onMouseEnter={e => {
-                      (e.currentTarget as HTMLElement).style.background = "rgba(74,160,74,0.10)";
-                      (e.currentTarget as HTMLElement).style.borderColor = "rgba(74,160,74,0.40)";
+                    onMouseEnter={(e) => {
+                      (e.currentTarget as HTMLElement).style.background =
+                        "rgba(74,160,74,0.10)";
+                      (e.currentTarget as HTMLElement).style.borderColor =
+                        "rgba(74,160,74,0.40)";
                     }}
-                    onMouseLeave={e => {
-                      (e.currentTarget as HTMLElement).style.background = "transparent";
-                      (e.currentTarget as HTMLElement).style.borderColor = "rgba(74,140,74,0.20)";
+                    onMouseLeave={(e) => {
+                      (e.currentTarget as HTMLElement).style.background =
+                        "transparent";
+                      (e.currentTarget as HTMLElement).style.borderColor =
+                        "rgba(74,140,74,0.20)";
                     }}
                     data-testid={`link-project-${i}-${lnk.label}`}
                   >
