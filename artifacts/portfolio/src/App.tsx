@@ -5,6 +5,8 @@ import { Mail, FileText, ArrowUpRight, Github, Linkedin } from "lucide-react";
    EDIT YOUR INFO HERE
    ───────────────────────────────────────────────────────────────────────────── */
 
+const PROFILE_IMAGE = ""; // ← paste a URL or drop a photo into the project (e.g. "/photo.jpg") and put the path here
+
 const NAME = "Ian Martinez Work"; // ← your full name
 const TAGLINE = "Building Across Borders · Strategy, Data & Technology"; // ← one-line intro
 
@@ -262,30 +264,55 @@ function Hero() {
       className="relative z-10 min-h-screen flex flex-col justify-center px-6 pt-24 pb-16 max-w-5xl mx-auto"
       data-testid="section-hero"
     >
-      <p className="section-label mb-6 fade-up fade-up-1">Portfolio</p>
-      <h1 className="hero-name mb-5 fade-up fade-up-2">{NAME}</h1>
-      <p className="text-sage text-lg leading-relaxed max-w-xl mb-10 fade-up fade-up-3">
-        {TAGLINE}
-      </p>
-      <div className="flex flex-wrap gap-3 fade-up fade-up-4">
-        <a
-          href={GITHUB_URL}
-          className="btn-primary"
-          data-testid="hero-github"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Github size={15} /> GitHub
-        </a>
-        <a
-          href={LINKEDIN_URL}
-          className="btn-secondary"
-          data-testid="hero-linkedin"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Linkedin size={15} /> LinkedIn
-        </a>
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-12">
+        {/* Text */}
+        <div className="flex-1">
+          <p className="section-label mb-6 fade-up fade-up-1">Portfolio</p>
+          <h1 className="hero-name mb-5 fade-up fade-up-2">{NAME}</h1>
+          <p className="text-sage text-lg leading-relaxed max-w-xl mb-10 fade-up fade-up-3">
+            {TAGLINE}
+          </p>
+          <div className="flex flex-wrap gap-3 fade-up fade-up-4">
+            <a
+              href={GITHUB_URL}
+              className="btn-primary"
+              data-testid="hero-github"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Github size={15} /> GitHub
+            </a>
+            <a
+              href={LINKEDIN_URL}
+              className="btn-secondary"
+              data-testid="hero-linkedin"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Linkedin size={15} /> LinkedIn
+            </a>
+          </div>
+        </div>
+        {/* Profile photo — only shown when PROFILE_IMAGE is set */}
+        {PROFILE_IMAGE && (
+          <div className="fade-up fade-up-2 shrink-0 flex justify-center md:justify-end">
+            <div
+              className="rounded-2xl overflow-hidden"
+              style={{
+                width: 220,
+                height: 260,
+                border: "1px solid rgba(74,140,74,0.20)",
+                boxShadow: "0 0 40px rgba(74,160,74,0.08)",
+              }}
+            >
+              <img
+                src={PROFILE_IMAGE}
+                alt={NAME}
+                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              />
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
