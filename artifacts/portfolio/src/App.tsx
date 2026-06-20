@@ -18,6 +18,15 @@ const ABOUT_TEXT = `I'm a builder at heart — studying Economics at UC Berkeley
 
 const PROJECTS = [
   {
+    title: "2026 FIFA World Cup Prediction Model",
+    description:
+      "Full prediction pipeline for the 2026 FIFA World Cup — a calibrated XGBoost model trained on 15,507 international matches, layered on a Poisson GLM baseline to simulate the tournament 10,000 times. Includes a separate X-Factor analysis on 3.25M Wyscout match events to identify playing-style features that distinguish winners beyond Elo ratings.",
+    tags: ["Python", "XGBoost", "Poisson GLM", "Pandas", "Sports Analytics"],
+    links: [
+      { label: "GitHub", url: "https://github.com/ianamwork/wc2026-prediction" },
+    ],
+  },
+  {
     title: "Sovereign Credit Rating Model and Colonial Impact",
     description:
       "Project predicts S&P sovereign ratings from macroeconomic fundamentals using ordered logit and XGBoost across 118 countries. Extended the original with colonial history variables and regional deviation analysis.",
