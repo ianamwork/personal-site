@@ -28,7 +28,7 @@ const PROJECTS = [
     tags: ["Python", "XGBoost", "Poisson GLM", "Pandas", "Sports Analytics"],
     links: [
       {
-        label: "GitHub",
+        label: "App",
         url: "https://wc2026-scanner.vercel.app/",
       },
     ],
